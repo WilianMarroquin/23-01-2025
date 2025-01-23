@@ -116,16 +116,23 @@
 <body>
 
 <div class="container">
-  <h2>¡Hola, querido/a!</h2>
-  <p class="question">¿Sabes cuál es la capital de Francia? 🌍</p>
-  <input type="text" id="answer" class="answer-input" placeholder="Escribe tu respuesta...">
+  <h2>¡Hola, nena!❤️</h2>
+  <p class="question">¿Qué fecha te quise más?</p>
+  <input type="date" id="answer" class="answer-input" placeholder="Escribe tu respuesta...">
   <button class="submit-button" onclick="checkAnswer()">Enviar</button>
 </div>
 
 <!-- Modal de Respuesta Correcta -->
 <div id="correctModal" class="modal">
   <div class="modal-content">
-    <p>¡Qué bien! La respuesta es correcta. 🌟</p>
+    <p>
+      <strong>¡La solución es la siguiente!</strong>
+      Para obtener el resultado, debes sustituir cada letra por la anterior en el abecedario. Por ejemplo:</p>
+    <div style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; font-family: Arial, sans-serif; font-size: 16px;">
+      <strong>Texto original:</strong> <span style="color: #007bff;">"Hola"</span><br> <strong>Texto transformado:</strong>
+      <span style="color: #ff5733;">"Gnkz"</span>
+    </div> <p>En este caso, "H" se convierte en "G", "o" en "n", "l" en "k" y "a" en "z".
+  </p>
     <button class="close-button" onclick="closeModal('correctModal')">Cerrar</button>
   </div>
 </div>
@@ -133,15 +140,16 @@
 <!-- Modal de Respuesta Incorrecta -->
 <div id="incorrectModal" class="modal">
   <div class="modal-content">
-    <p>Ups, esa no es la respuesta correcta. 😕</p>
+    <p>Ups, esa no es la respuesta correcta. 😕 </p>
+    <p style="font-size: 12px">(Por cada respuesta incorrecta me debes un abrazo extra!)</p>
     <button class="close-button" onclick="closeModal('incorrectModal')">Cerrar</button>
   </div>
 </div>
 
 <script>
   function checkAnswer() {
-    var answer = document.getElementById("answer").value.trim().toLowerCase();
-    if (answer === "parís" || answer === "paris") {
+    var answer = document.getElementById("answer").value;
+    if (answer === "2025-01-23") {
       openModal('correctModal');
     } else {
       openModal('incorrectModal');
